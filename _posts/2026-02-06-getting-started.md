@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "aan de slag met jekyll en obsidian"
+title: "Aan de slag met Jekyll en Obsidian"
 date: 2026-02-06 15:30:00 +0000
 categories: [tutorial]
 tags: [jekyll, obsidian, setup]
