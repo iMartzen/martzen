@@ -3,24 +3,104 @@ layout: default
 title: Home
 ---
 
+<style>
+.welcome-section {
+  text-align: center;
+  padding: 2em 0;
+  margin-bottom: 3em;
+}
+
+.welcome-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  background: linear-gradient(120deg, #2d1b4e, #6b4fc7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcome-section .tagline {
+  font-size: 1.2em;
+  color: #606c71;
+  font-style: italic;
+}
+
+.posts-section h2 {
+  border-bottom: 2px solid #6b4fc7;
+  padding-bottom: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.post-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eff0f1;
+  transition: transform 0.2s;
+}
+
+.post-item:hover {
+  transform: translateX(5px);
+}
+
+.post-item h3 {
+  margin-top: 0;
+}
+
+.post-item h3 a {
+  text-decoration: none;
+  color: #2d1b4e;
+}
+
+.post-item h3 a:hover {
+  color: #6b4fc7;
+}
+
+.post-date {
+  color: #8b6fd9;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.7em 1.5em;
+  background: linear-gradient(120deg, #6b4fc7, #8b6fd9);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.view-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(107, 79, 199, 0.3);
+  color: white;
+}
+</style>
+
 <section class="main-content">
-    <h1>Welcome to {{ site.title }}</h1>
-    <p>{{ site.description }}</p>
+    <div class="welcome-section">
+        <h1>Welkom bij {{ site.title }}</h1>
+        <p class="tagline">{{ site.description }}</p>
+    </div>
 
-    <h2>Recent Posts</h2>
-    <ul style="list-style: none; padding: 0;">
-        {% for post in site.posts limit:5 %}
-        <li style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eff0f1;">
-            <h3 style="margin-top: 0;">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h3>
-            <p style="color: #606c71; font-size: 0.9rem;">{{ post.date | date: "%B %-d, %Y" }}</p>
-            {% if post.excerpt %}
-            <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
-            {% endif %}
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="posts-section">
+        <h2>📝 Recente blogposts</h2>
+        <ul style="list-style: none; padding: 0;">
+            {% for post in site.posts limit:5 %}
+            <li class="post-item">
+                <h3>
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                <p class="post-date">{{ post.date | date: "%-d %B %Y" }}</p>
+                {% if post.excerpt %}
+                <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
 
-    <p><a href="{{ '/blog' | relative_url }}">View all posts →</a></p>
+        <p><a href="{{ '/blog' | relative_url }}" class="view-all">Alle posts bekijken →</a></p>
+    </div>
 </section>

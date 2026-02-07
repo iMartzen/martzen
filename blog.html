@@ -3,16 +3,64 @@ layout: default
 title: Blog
 ---
 
+<style>
+.blog-header {
+  border-bottom: 3px solid #6b4fc7;
+  padding-bottom: 1em;
+  margin-bottom: 2em;
+}
+
+.blog-header h1 {
+  background: linear-gradient(120deg, #2d1b4e, #6b4fc7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blog-post-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eff0f1;
+  transition: transform 0.2s;
+}
+
+.blog-post-item:hover {
+  transform: translateX(5px);
+}
+
+.blog-post-item h2 {
+  margin-top: 0;
+}
+
+.blog-post-item h2 a {
+  text-decoration: none;
+  color: #2d1b4e;
+}
+
+.blog-post-item h2 a:hover {
+  color: #6b4fc7;
+}
+
+.post-meta {
+  color: #8b6fd9;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+</style>
+
 <section class="main-content">
-    <h1>Blog</h1>
+    <div class="blog-header">
+        <h1>📝 Blog</h1>
+        <p>Mijn gedachten over tech, security en alles ertussenin</p>
+    </div>
 
     <ul style="list-style: none; padding: 0;">
         {% for post in site.posts %}
-        <li style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eff0f1;">
-            <h2 style="margin-top: 0;">
+        <li class="blog-post-item">
+            <h2>
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             </h2>
-            <p style="color: #606c71; font-size: 0.9rem;">{{ post.date | date: "%B %-d, %Y" }}</p>
+            <p class="post-meta">{{ post.date | date: "%-d %B %Y" }}</p>
             {% if post.excerpt %}
             <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
             {% endif %}
