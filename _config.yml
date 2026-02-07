@@ -1,0 +1,52 @@
+# Site settings
+title: iMartzen
+description: My personal blog and website
+url: "https://imartzen.github.io"
+baseurl: ""
+
+# Author information
+author:
+  name: Martzen
+  email: 
+
+# Build settings
+theme: jekyll-theme-cayman
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Martzen"
+
+# Obsidian compatibility
+exclude:
+  - .obsidian/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .vscode/
+  - README.md
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Kramdown settings (better Obsidian compatibility)
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false

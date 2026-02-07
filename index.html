@@ -1,0 +1,26 @@
+---
+layout: default
+title: Home
+---
+
+<section class="main-content">
+    <h1>Welcome to {{ site.title }}</h1>
+    <p>{{ site.description }}</p>
+
+    <h2>Recent Posts</h2>
+    <ul style="list-style: none; padding: 0;">
+        {% for post in site.posts limit:5 %}
+        <li style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eff0f1;">
+            <h3 style="margin-top: 0;">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p style="color: #606c71; font-size: 0.9rem;">{{ post.date | date: "%B %-d, %Y" }}</p>
+            {% if post.excerpt %}
+            <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{{ '/blog' | relative_url }}">View all posts →</a></p>
+</section>

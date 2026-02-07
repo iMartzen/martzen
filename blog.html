@@ -1,0 +1,22 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="main-content">
+    <h1>Blog</h1>
+
+    <ul style="list-style: none; padding: 0;">
+        {% for post in site.posts %}
+        <li style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eff0f1;">
+            <h2 style="margin-top: 0;">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <p style="color: #606c71; font-size: 0.9rem;">{{ post.date | date: "%B %-d, %Y" }}</p>
+            {% if post.excerpt %}
+            <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
