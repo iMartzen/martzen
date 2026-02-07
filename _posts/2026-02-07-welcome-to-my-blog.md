@@ -1,45 +1,45 @@
 ---
 layout: post
-title: "Welcome to My Blog"
+title: "welkom op mijn blog"
 date: 2026-02-07 10:00:00 +0000
-categories: [blog, welcome]
-tags: [first-post, jekyll, obsidian]
+categories: [blog, welkom]
+tags: [eerste-post, jekyll, obsidian]
 ---
 
-This is your first blog post written in Obsidian and published with Jekyll!
+Dit is mijn eerste blog post geschreven in Obsidian en gepubliceerd met Jekyll!
 
-## Writing in Obsidian
+## Schrijven in obsidian
 
-You can write your blog posts in Obsidian using markdown. Here are some features:
+Je kunt je blog posts in Obsidian schrijven met markdown. Hier zijn enkele features:
 
-- **Bold text** and *italic text*
-- Lists (like this one)
-- Links and images
-- Code blocks
-- And much more!
+- **Vette tekst** en *cursieve tekst*
+- Lijsten (zoals deze)
+- Links en afbeeldingen
+- Code blokken
+- En nog veel meer!
 
-## How to Create New Posts
+## Hoe maak je nieuwe posts?
 
-1. Open your vault in Obsidian
-2. Navigate to the `_posts` folder
-3. Create a new note with the format: `YYYY-MM-DD-title-of-post.md`
-4. Add the front matter (the YAML section at the top)
-5. Write your content in markdown
-6. Save and rebuild your Jekyll site!
+1. Open je vault in Obsidian
+2. Ga naar de `_posts` folder
+3. Maak een nieuwe note aan met het formaat: `JJJJ-MM-DD-titel-van-post.md`
+4. Voeg de front matter toe (het YAML gedeelte bovenaan)
+5. Schrijf je content in markdown
+6. Sla op en herbouw je Jekyll site!
 
-## Code Example
+## Code voorbeeld
 
 ```python
 def hello_world():
-    print("Hello from Jekyll + Obsidian!")
+    print("Hallo vanuit Jekyll + Obsidian!")
 ```
 
-## Images
+## Afbeeldingen
 
-Place your images in the `assets/images` folder and reference them like this:
+Plaats je afbeeldingen in de `assets/images` folder en refereer ze zo:
 
 ```markdown
-![Alt text](/assets/images/your-image.jpg)
+![Alt text](/assets/images/jouw-afbeelding.jpg)
 ```
 
-Happy blogging! 🎉
+Veel plezier met bloggen! 🎉
