@@ -10,7 +10,7 @@ author:
   email: 
 
 # Build settings
-theme: jekyll-theme-cayman
+remote_theme: pages-themes/cayman@v0.2.0
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:year/:month/:day/:title/
@@ -44,6 +44,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-remote-theme
 
 # Kramdown settings (better Obsidian compatibility)
 kramdown:
