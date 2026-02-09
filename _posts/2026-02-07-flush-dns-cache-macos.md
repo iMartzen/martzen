@@ -2,8 +2,8 @@
 layout: post
 title: "DNS Cache legen op macOS"
 date: 2026-02-07 10:00:00 +0000
-categories: [macos, terminal]
-tags: [dns, cache, zsh, alias, productiviteit]
+categories: [Programming]
+tags: [dns, cache, zsh, alias, productiviteit, macos, terminal]
 ---
 
 Heb je wel eens problemen gehad met je netwerk op macOS waarbij websites niet laden, terwijl je internet prima werkt? Dan moet je waarschijnlijk je DNS cache legen. Ik liep hier steeds tegenaan en werd het zat om elke keer het commando te googelen.

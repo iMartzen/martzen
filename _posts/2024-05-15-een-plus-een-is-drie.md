@@ -2,8 +2,8 @@
 layout: post
 title: "1 + 1 = 3: waarom synergie geen buzzword is"
 date: 2024-05-15
-categories: [teamwork, philosophy, security]
-tags: [teamwork, synergy, win-win, empathy, shift-left, security-culture, bug-bounty]
+categories: [Teamwork]
+tags: [synergy, win-win, empathie, philosophy, security-culture, collaboration]
 ---
 
 Toen ik in 2024 een “Win as a Team” award kreeg, voelde dat eerlijk gezegd een beetje ongemakkelijk. Niet omdat ik het niet waardeer, maar omdat samenwerken vaak juist het soort werk is dat je niet goed kunt aanwijzen als “van één persoon”.

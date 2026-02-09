@@ -2,8 +2,8 @@
 layout: post
 title: "350 credentials roteren: waarom ik dit elk jaar wil blijven doen"
 date: 2024-04-05
-categories: [security, best-practices, infrastructure]
-tags: [credential-rotation, secrets-management, vault, incident-response, automation, security-culture, infrastructure]
+categories: [Security, Infrastructure]
+tags: [credential-rotation, secrets-management, vault, incident-response, automation, best-practices]
 ---
 
 **350 credentials.** Elk jaar (meestal rond september) roteren we ze allemaal: wachtwoorden, service tokens, SSH-keys en andere secrets die, als ze lekken, direct impact kunnen hebben.

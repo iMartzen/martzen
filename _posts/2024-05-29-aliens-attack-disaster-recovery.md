@@ -2,8 +2,8 @@
 layout: post
 title: "Aliens vielen ons datacenter aan: disaster recovery met een twist"
 date: 2024-05-29
-categories: [disaster-recovery, infrastructure, resilience]
-tags: [disaster-recovery, infrastructure, resilience, rpo, rto]
+categories: [Infrastructure]
+tags: [disaster-recovery, resilience, rpo, rto]
 ---
 
 > “In a shocking turn of events, the AWS us-west-2 datacenter in Oregon fell victim to a targeted invasion by green-skinned extraterrestrial beings.”

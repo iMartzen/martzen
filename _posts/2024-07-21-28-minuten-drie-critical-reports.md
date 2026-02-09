@@ -2,8 +2,8 @@
 layout: post
 title: "28 minuten, 3 critical reports: Patroon detectie met AI"
 date: 2025-07-21
-categories: [automation, security, incident-response, ai]
-tags: [automation, security, incident-response, ai]
+categories: [Security]
+tags: [automation, incident-response, ai, pattern-detection]
 ---
 
 **28 minuten.** Dat was alles wat nodig was om drie kritieke security reports binnen te krijgen. Drie verschillende hackers, drie varianten van hetzelfde probleem. Zonder automatisering hadden we uren of dagen nodig kunnen hebben om het patroon te herkennen, nu werd alles gebundeld en aangeboden.

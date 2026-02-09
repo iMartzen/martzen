@@ -1,173 +1,43 @@
-# Martzen Blog - Jekyll + Obsidian Setup
+# Chirpy Starter
 
-This is a Jekyll website integrated with Obsidian for easy blog post management.
+[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
+[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
 
-## 🚀 Quick Start
+When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
+`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
+from the theme's gem. If you have ever installed this theme gem, you can use the command
+`bundle info --path jekyll-theme-chirpy` to locate these files.
 
-### 1. Install Dependencies
+The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
+able to enjoy the out-of-the-box experience when using feature-rich themes.
 
-```bash
-bundle install
+To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
+Jekyll site. The following is a list of targets:
+
+```shell
+.
+├── _config.yml
+├── _plugins
+├── _tabs
+└── index.html
 ```
 
-### 2. Run Jekyll Locally
+To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
+latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
 
-```bash
-bundle exec jekyll serve
-```
+## Usage
 
-Visit `http://localhost:4000` to see your site!
+Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
 
-## 📝 Writing Blog Posts in Obsidian
+## Contributing
 
-### Open in Obsidian
+This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
 
-1. Open Obsidian
-2. Choose "Open folder as vault"
-3. Select this project folder
+## License
 
-### Creating a New Blog Post
+This work is published under [MIT][mit] License.
 
-1. In Obsidian, navigate to the `_posts` folder
-2. Create a new note with the format: `YYYY-MM-DD-title-of-post.md`
-   - Example: `2026-02-07-my-awesome-post.md`
-3. Add front matter at the top:
-
-```yaml
----
-layout: post
-title: "Your Post Title"
-date: 2026-02-07 10:00:00 +0000
-categories: [category1, category2]
-tags: [tag1, tag2]
----
-```
-
-1. Write your content in markdown below the front matter
-2. Save the file
-
-### Front Matter Explained
-
-- **layout**: Always use `post` for blog posts
-- **title**: Your post title (use quotes)
-- **date**: Publication date and time
-- **categories**: Organize posts by category
-- **tags**: Add searchable tags
-
-## 📁 Folder Structure
-
-```bash
-martzen/
-├── _posts/           # Your blog posts (write here in Obsidian!)
-├── _layouts/         # Jekyll page layouts
-├── _includes/        # Reusable components (header, footer)
-├── assets/
-│   ├── css/          # Stylesheets
-│   └── images/       # Images for posts (Obsidian attachments)
-├── _config.yml       # Jekyll configuration
-├── index.html        # Homepage
-├── blog.html         # Blog listing page
-└── about.md          # About page
-```
-
-## 🖼️ Adding Images
-
-1. Place images in `assets/images/`
-2. In your post, reference them:
-
-```markdown
-![Alt text](/assets/images/your-image.jpg)
-```
-
-Obsidian is configured to automatically save attachments to `assets/images/`.
-
-## 🎨 Customization
-
-### Update Site Information
-
-Edit `_config.yml`:
-
-- Change `title`, `description`, `author` information
-- Update your email and name
-
-### Modify Styling
-
-Edit `assets/css/style.css` to customize the look and feel.
-
-### Add New Pages
-
-Create new `.md` or `.html` files in the root directory with:
-
-```yaml
----
-layout: page
-title: Your Page Title
-permalink: /your-page/
----
-```
-
-## 🌐 Deployment
-
-### GitHub Pages
-
-1. Push this repository to GitHub
-2. Go to Settings → Pages
-3. Select branch to deploy
-4. Your site will be live at `https://yourusername.github.io/repository-name`
-
-### Other Hosting
-
-After running `bundle exec jekyll build`, upload the `_site/` folder to any web hosting service.
-
-## 📚 Useful Commands
-
-```bash
-# Install dependencies
-bundle install
-
-# Run development server
-bundle exec jekyll serve
-
-# Build site for production
-bundle exec jekyll build
-
-# Run with drafts visible
-bundle exec jekyll serve --drafts
-
-# Clean build files
-bundle exec jekyll clean
-```
-
-## 💡 Tips for Obsidian + Jekyll
-
-1. **File naming**: Always use `YYYY-MM-DD-title.md` format for posts
-2. **Internal links**: Obsidian's `[[links]]` won't work in Jekyll - use standard markdown `[text](url)`
-3. **Templates**: Use the template in `_templates/blog-post.md` for new posts
-4. **Preview**: Keep Jekyll running locally to preview changes in real-time
-5. **Commits**: Regularly commit your posts to Git
-
-## 🔧 Troubleshooting
-
-**Jekyll won't start?**
-
-- Run `bundle install` to ensure all gems are installed
-- Check Ruby version (Jekyll requires Ruby 2.5+)
-
-**Posts not showing?**
-
-- Check the date in front matter isn't in the future
-- Ensure filename follows `YYYY-MM-DD-title.md` format
-- Make sure file is in `_posts/` folder
-
-**Images not loading?**
-
-- Verify image path is `/assets/images/filename.jpg`
-- Check file actually exists in `assets/images/`
-
-## 📖 Learn More
-
-- [Jekyll Documentation](https://jekyllrb.com/docs/)
-- [Obsidian Help](https://help.obsidian.md/)
-- [Markdown Guide](https://www.markdownguide.org/)
-
-Happy blogging! 🎉
+[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
+[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
+[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
+[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE

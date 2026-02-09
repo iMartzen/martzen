@@ -2,8 +2,8 @@
 layout: post
 title: "Aan de slag met Jekyll en Obsidian"
 date: 2026-02-06 15:30:00 +0000
-categories: [tutorial]
-tags: [jekyll, obsidian, setup]
+categories: [Programming]
+tags: [jekyll, obsidian, setup, tutorial]
 ---
 
 Deze setup stelt je in staat om Obsidian te gebruiken als je blog post editor, terwijl Jekyll je website genereert.
