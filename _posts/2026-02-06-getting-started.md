@@ -2,6 +2,7 @@
 layout: post
 title: "Aan de slag met Jekyll en Obsidian"
 date: 2026-02-06 15:30:00 +0000
+image: /assets/img/posts/getting-started.jpg
 categories: [Programming]
 tags: [jekyll, obsidian, setup, tutorial]
 ---

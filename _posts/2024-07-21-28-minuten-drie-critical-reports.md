@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "28 minuten, 3 critical reports: Patroon detectie met AI"
-date: 2025-07-21
+date: 2024-07-21
+image: /assets/img/posts/28-minuten-drie-critical-reports.jpg
 categories: [Security]
 tags: [automation, incident-response, ai, pattern-detection]
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "Aliens vielen ons datacenter aan: disaster recovery met een twist"
 date: 2024-05-29
+image: /assets/img/posts/aliens-attack-disaster-recovery.jpg
 categories: [Infrastructure]
 tags: [disaster-recovery, resilience, rpo, rto]
 ---

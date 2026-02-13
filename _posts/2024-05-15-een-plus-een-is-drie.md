@@ -2,6 +2,7 @@
 layout: post
 title: "1 + 1 = 3: waarom synergie geen buzzword is"
 date: 2024-05-15
+image: /assets/img/posts/een-plus-een-is-drie.jpg
 categories: [Teamwork]
 tags: [synergy, win-win, empathie, philosophy, security-culture, collaboration]
 ---

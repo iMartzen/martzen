@@ -2,6 +2,7 @@
 layout: post
 title: "91% accurate geautomatiseerde routing in exposure management"
 date: 2025-12-11 10:00:00 +0000
+image: /assets/img/posts/automated-routing-hackerone.jpg
 categories: [Security]
 tags: [hackerone, ai, automation, exposure-management]
 ---

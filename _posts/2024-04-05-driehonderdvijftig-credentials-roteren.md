@@ -2,6 +2,7 @@
 layout: post
 title: "350 credentials roteren: waarom ik dit elk jaar wil blijven doen"
 date: 2024-04-05
+image: /assets/img/posts/driehonderdvijftig-credentials-roteren.jpg
 categories: [Security, Infrastructure]
 tags: [credential-rotation, secrets-management, vault, incident-response, automation, best-practices]
 ---

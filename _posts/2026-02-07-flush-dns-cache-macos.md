@@ -2,6 +2,7 @@
 layout: post
 title: "DNS Cache legen op macOS"
 date: 2026-02-07 10:00:00 +0000
+image: /assets/img/posts/flush-dns-cache-macos.jpg
 categories: [Programming]
 tags: [dns, cache, zsh, alias, productiviteit, macos, terminal]
 ---
