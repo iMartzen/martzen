@@ -10,7 +10,7 @@ layout:
 # The tabs of sidebar
 tabs:
   # format: <filename_without_extension>: <value>
-  home: Startpagina
+  home: Home
   categories: Categorieën
   tags: Tags
   archives: Archief
@@ -30,7 +30,7 @@ panel:
 copyright:
   # Shown at the bottom of the post
   license:
-    template: Alle posts zijn onder :LICENSE_NAME gepubliceerd door de auteur.
+    template: :LICENSE_NAME
     name: CC BY 4.0
     link: https://creativecommons.org/licenses/by/4.0/
 
