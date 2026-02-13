@@ -2,7 +2,19 @@
 
 source "https://rubygems.org"
 
-gem "jekyll-theme-chirpy", "~> 7.4", ">= 7.4.1"
+# Jekyll core
+gem "jekyll", "~> 4.3"
+
+# Jekyll plugins (required for Chirpy theme)
+group :jekyll_plugins do
+  gem "jekyll-archives"
+  gem "jekyll-paginate"
+  gem "jekyll-redirect-from"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-feed"
+  gem "jekyll-include-cache"
+end
 
 gem "html-proofer", "~> 5.0", group: :test
 
