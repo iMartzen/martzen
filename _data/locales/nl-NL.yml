@@ -10,7 +10,7 @@ layout:
 # The tabs of sidebar
 tabs:
   # format: <filename_without_extension>: <value>
-  home: Home
+  home: Startpagina
   categories: Categorieën
   tags: Tags
   archives: Archief
@@ -40,7 +40,7 @@ copyright:
     Tenzij anders vermeld, alle posts zijn onder de
     Creative Commons Attribution 4.0 International (CC BY 4.0) gepubliceerd door de auteur.
 
-meta: Gebruikt :PLATFORM op basis van het :THEME thema.
+meta: Gebruikt :THEME
 
 not_found:
   statement: Sorry, we hebben de URL verkeerd geplaatst of hij verwijst naar iets dat niet bestaat.
@@ -50,7 +50,6 @@ notification:
   update: Update
 
 # ----- Posts related labels -----
-
 post:
   written_by: Door
   posted: Posted
@@ -70,8 +69,6 @@ post:
     share_link:
       title: Link kopiëren
       succeed: Succesvol gekopieerd!
-  # pinned prompt of posts list on homepage
-  pin_prompt: Vastgepind
 
 # Date time format.
 # See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>

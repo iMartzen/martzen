@@ -1,43 +1,61 @@
-# Chirpy Starter
+# Martzen.nl
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+Persoonlijke blog over security, infrastructure, en development.
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+🌐 **Live:** [martzen.nl](https://martzen.nl)
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+## Theme
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+Deze site gebruikt het [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy/) theme v7.4.1 als volledig lokale fork (geen gem dependency).
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+**Credits:** Theme created by [Cotes Chung](https://github.com/cotes2020) - [MIT License](https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE)
+
+## Development
+
+```bash
+bundle install && npm ci
+npm run build
+bundle exec jekyll serve
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+Site draait op [http://localhost:4000](http://localhost:4000)
 
-## Usage
+## Deployment
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+Automatisch via GitHub Actions naar GitHub Pages.
 
-## Contributing
+## Theme Updates
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+Lokale fork van Chirpy v7.4.1. Upstream als remote `chirpy` toegevoegd voor updates.
 
-## License
+### Update Workflow
 
-This work is published under [MIT][mit] License.
+```bash
+# Check nieuwe versies
+git fetch chirpy --tags
+git log v7.4.1..v7.5.0 --oneline
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+# Test in branch
+git checkout -b test-update
+git merge chirpy/v7.5.0
+npm run build && bundle exec jekyll serve
+
+# Deploy als OK
+git checkout main && git merge chirpy/v7.5.0
+git push origin main
+```
+
+### Aangepaste Bestanden
+
+Bij conflicts: behoud lokale versie of merge settings:
+
+- `_includes/head.html` - CSS pad via `site.css_theme` variable
+- `_config.yml` - Site config (lang, timezone, social)
+- `.gitignore` - Lock files tracked
+
+### Rollback
+
+```bash
+git revert <merge-commit>
+# OF: git reset --hard HEAD~1 && git push --force
+```
