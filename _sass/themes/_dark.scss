@@ -1,124 +1,176 @@
+// Purple Midnight Theme - Dark theme with purple glow design system
+// Created: February 2026 - Hip modern theme with accessibility-first approach
+
 @mixin styles {
   color-scheme: dark;
 
-  /* Framework color */
-  --main-bg: rgb(27 27 30);
-  --mask-bg: rgb(68 69 70);
-  --main-border-color: rgb(44 45 45);
+  /* == PURPLE GLOW DESIGN SYSTEM == */
+  
+  /* Core Purple Palette */
+  --purple-50: #F4F1FF;
+  --purple-100: #E5DBFF;
+  --purple-300: #B794F6;
+  --purple-500: #7C5DFA;        // Primary brand color
+  --purple-600: #6B46C1;       // Hover interactions
+  --purple-700: #5B2C87;       // Active states
+  --purple-glow: rgba(124, 93, 250, 0.4);
+  
+  /* Framework color (deep purple-black foundation) */
+  --main-bg: #0D0A14;          // Deep purple-black
+  --mask-bg: #2D2A3A;          // Modal overlays
+  --main-border-color: #393048; // Subtle borders
 
-  /* Common color */
-  --text-color: rgb(175 176 177);
-  --text-muted-color: #868686;
-  --text-muted-highlight-color: #aeaeae;
-  --heading-color: #cccccc;
-  --label-color: #a7a7a7;
-  --blockquote-border-color: rgb(66 66 66);
-  --blockquote-text-color: #868686;
-  --link-color: rgb(138 180 248);
-  --link-underline-color: rgb(82 108 150);
-  --button-bg: #1e1e1e;
-  --btn-border-color: #2e2f31;
+  /* Background layers for depth */
+  --bg-primary: #0D0A14;
+  --bg-secondary: #1A1525;      // Elevated surfaces
+  --bg-tertiary: #252235;       // Cards and components
+  --surface-elevated: #2D2A3A;  // Modals, dropdowns
+  --surface-glass: rgba(45, 42, 58, 0.8);
+
+  /* Typography system */
+  --text-color: #E8E6F0;        // High contrast primary text
+  --text-muted-color: #B8B0C7;  // Secondary readable text
+  --text-muted-highlight-color: #C8C0D7;
+  --heading-color: #F0EDF7;     // Headers bright and clear
+  --label-color: #B8B0C7;
+  --blockquote-border-color: #393048;
+  --blockquote-text-color: #B8B0C7;
+  --link-color: var(--purple-500);
+  --link-underline-color: var(--purple-300);
+  
+  /* Interactive elements */
+  --button-bg: var(--bg-tertiary);
+  --btn-border-color: #393048;
   --btn-backtotop-color: var(--text-color);
-  --btn-backtotop-border-color: #212122;
-  --card-header-bg: #292929;
-  --checkbox-color: rgb(118 120 121);
-  --checkbox-checked-color: var(--link-color);
-  --img-bg: radial-gradient(circle, rgb(22 22 24) 0%, rgb(32 32 32) 100%);
+  --btn-backtotop-border-color: #393048;
+  --card-header-bg: var(--bg-secondary);
+  --checkbox-color: #B8B0C7;
+  --checkbox-checked-color: var(--purple-500);
+  
+  /* Enhanced gradients with purple tints */
+  --img-bg: radial-gradient(circle, #1A1525 0%, #252235 100%);
   --shimmer-bg: linear-gradient(
     90deg,
-    rgb(255 255 255 / 0%) 0%,
-    rgb(58 55 55 / 40%) 50%,
-    rgb(255 255 255 / 0%) 100%
+    rgba(124, 93, 250, 0%) 0%,
+    rgba(124, 93, 250, 0.2) 50%,
+    rgba(124, 93, 250, 0%) 100%
   );
 
-  /* Sidebar */
-  --site-title-color: #717070;
-  --site-subtitle-color: #868686;
-  --sidebar-bg: #1e1e1e;
-  --sidebar-border-color: #292929;
-  --sidebar-muted-color: #868686;
-  --sidebar-active-color: rgb(255 255 255 / 95%);
-  --sidebar-hover-bg: #262626;
-  --sidebar-btn-bg: #232328;
-  --sidebar-btn-color: #787878;
-  --avatar-border-color: rgb(206 206 206 / 90%);
+  /* Sidebar - Purple atmosphere */
+  --site-title-color: var(--purple-300);
+  --site-subtitle-color: #B8B0C7;
+  --sidebar-bg: var(--bg-secondary);
+  --sidebar-border-color: #393048;
+  --sidebar-muted-color: #B8B0C7;   // This is the main nav link color!
+  --sidebar-active-color: var(--purple-500);
+  --sidebar-hover-bg: rgba(124, 93, 250, 0.08);
+  --sidebar-btn-bg: var(--bg-tertiary);
+  --sidebar-btn-color: #B8B0C7;
+  --avatar-border-color: var(--purple-300);
 
-  /* Topbar */
-  --topbar-bg: rgb(27 27 30 / 64%);
+  /* Topbar with glass effect */
+  --topbar-bg: rgba(13, 10, 20, 0.8);
   --topbar-text-color: var(--text-color);
-  --search-border-color: rgb(55 55 55);
-  --search-icon-color: rgb(100 102 105);
-  --input-focus-border-color: rgb(112 114 115);
+  --search-border-color: #393048;
+  --search-icon-color: #B8B0C7;
+  --input-focus-border-color: var(--purple-500);
 
   /* Home page */
-  --post-list-text-color: rgb(175 176 177);
+  --post-list-text-color: var(--text-muted-color);
   --btn-patinator-text-color: var(--text-color);
-  --btn-paginator-hover-color: #2e2e2e;
+  --btn-paginator-hover-color: var(--bg-tertiary);
 
-  /* Posts */
-  --toc-highlight: rgb(116 178 243);
-  --toc-popup-border-color: #373737;
-  --tag-hover: rgb(43 56 62);
-  --tb-odd-bg: #252526; /* odd rows of the posts' table */
-  --tb-even-bg: rgb(31 31 34); /* even rows of the posts' table */
-  --tb-border-color: var(--tb-odd-bg);
-  --footnote-target-bg: rgb(63 81 181);
-  --btn-share-color: #6c757d;
-  --btn-share-hover-color: #bfc1ca;
-  --card-bg: #1e1e1e;
-  --card-hover-bg: #464d51;
-  --card-shadow: rgb(21 21 21 / 72%) 0 6px 18px 0,
-    rgb(137 135 135 / 24%) 0 0 0 1px;
-  --kbd-wrap-color: #6a6a6a;
-  --kbd-text-color: #d3d3d3;
-  --kbd-bg-color: #242424;
-  --prompt-text-color: rgb(216 212 212 / 75%);
-  --prompt-tip-bg: rgb(22 60 36 / 64%);
-  --prompt-tip-icon-color: rgb(15 164 15 / 81%);
-  --prompt-info-bg: rgb(7 59 104 / 80%);
-  --prompt-info-icon-color: #0075d1;
-  --prompt-warning-bg: rgb(90 69 3 / 88%);
-  --prompt-warning-icon-color: rgb(255 165 0 / 80%);
-  --prompt-danger-bg: rgb(86 28 8 / 80%);
-  --prompt-danger-icon-color: #cd0202;
+  /* Posts with purple accents */
+  --toc-highlight: var(--purple-500);
+  --toc-popup-border-color: #393048;
+  --tag-hover: rgba(124, 93, 250, 0.16);
+  --tb-odd-bg: var(--bg-tertiary);
+  --tb-even-bg: var(--bg-secondary);
+  --tb-border-color: #393048;
+  --footnote-target-bg: var(--purple-700);
+  --btn-share-color: #B8B0C7;
+  --btn-share-hover-color: var(--purple-300);
+  --card-bg: var(--bg-tertiary);
+  --card-hover-bg: rgba(124, 93, 250, 0.12);
+  
+  /* Enhanced card shadows with purple glow */
+  --card-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(57, 48, 72, 0.8);
+  
+  /* Keyboard styling */
+  --kbd-wrap-color: #B8B0C7;
+  --kbd-text-color: var(--text-color);
+  --kbd-bg-color: var(--bg-tertiary);
+  
+  /* Status colors with purple info */
+  --prompt-text-color: rgba(232, 230, 240, 0.8);
+  --prompt-tip-bg: rgba(34, 197, 94, 0.15);
+  --prompt-tip-icon-color: #22C55E;
+  --prompt-info-bg: rgba(124, 93, 250, 0.15);
+  --prompt-info-icon-color: var(--purple-500);
+  --prompt-warning-bg: rgba(245, 158, 11, 0.15);
+  --prompt-warning-icon-color: #F59E0B;
+  --prompt-danger-bg: rgba(239, 68, 68, 0.15);
+  --prompt-danger-icon-color: #EF4444;
 
-  /* Tags */
-  --tag-border: rgb(59 79 88);
-  --tag-shadow: rgb(32 33 33);
-  --dash-color: rgb(63 65 68);
-  --search-tag-bg: #292828;
+  /* Tags with purple theming */
+  --tag-border: #393048;
+  --tag-shadow: rgba(0, 0, 0, 0.4);
+  --dash-color: #B8B0C7;
+  --search-tag-bg: var(--bg-tertiary);
 
   /* Categories */
-  --categories-border: rgb(64 66 69 / 50%);
-  --categories-hover-bg: rgb(73 75 76);
-  --categories-icon-hover-color: white;
+  --categories-border: rgba(57, 48, 72, 0.6);
+  --categories-hover-bg: rgba(124, 93, 250, 0.12);
+  --categories-icon-hover-color: var(--purple-300);
 
-  /* Archive */
-  --timeline-node-bg: rgb(150 152 156);
-  --timeline-color: rgb(63 65 68);
-  --timeline-year-dot-color: var(--timeline-color);
+  /* Archive timeline */
+  --timeline-node-bg: var(--purple-500);
+  --timeline-color: #393048;
+  --timeline-year-dot-color: var(--purple-300);
 
-  /* Code highlight colors */
-  --language-border-color: #2d2d2d;
-  --highlight-bg-color: #151515;
-  --highlighter-rouge-color: #c9def1;
-  --highlight-lineno-color: #808080;
-  --inline-code-bg: rgb(255 255 255 / 5%);
-  --code-color: #b0b0b0;
-  --code-header-text-color: #6a6a6a;
-  --code-header-muted-color: #353535;
-  --code-header-icon-color: #565656;
-  --clipboard-checked-color: #2bcc2b;
-  --filepath-text-color: #cacaca;
+  /* Code highlighting with purple theme */
+  --language-border-color: #393048;
+  --highlight-bg-color: #1A1525;
+  --highlighter-rouge-color: var(--purple-300);
+  --highlight-lineno-color: #B8B0C7;
+  --inline-code-bg: rgba(124, 93, 250, 0.08);
+  --code-color: #E8E6F0;
+  --code-header-text-color: #B8B0C7;
+  --code-header-muted-color: #393048;
+  --code-header-icon-color: var(--purple-300);
+  --clipboard-checked-color: #22C55E;
+  --filepath-text-color: var(--purple-300);
+
+  /* == GLOW SYSTEM == */
+  /* Subtle glows for different interaction states */
+  --glow-subtle: 0 0 20px rgba(124, 93, 250, 0.2);
+  --glow-medium: 0 0 40px rgba(124, 93, 250, 0.3);
+  --glow-strong: 0 0 60px rgba(124, 93, 250, 0.4);
+  
+  /* Interactive overlays */
+  --hover-overlay: rgba(124, 93, 250, 0.08);
+  --active-overlay: rgba(124, 93, 250, 0.16);
+  --selection: rgba(124, 93, 250, 0.2);
+  
+  /* Enhanced shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.3);
 
   .light {
     display: none;
   }
 
-  /* Categories */
+  /* Enhanced component styles with purple glow effects */
   .categories.card,
   .list-group-item {
     background-color: var(--card-bg);
+    transition: box-shadow 0.3s ease;
+    
+    &:hover {
+      box-shadow: var(--shadow-sm), var(--glow-subtle);
+    }
   }
 
   .categories {
@@ -135,169 +187,45 @@
       &:last-child {
         border-bottom-color: var(--card-bg);
       }
+      
+      &:hover {
+        background: var(--categories-hover-bg);
+        border-left: 3px solid var(--purple-500);
+        padding-left: calc(2rem - 3px);
+      }
     }
   }
 
+  /* Enhanced archive styling with purple gradient */
   #archives li:nth-child(odd) {
     background-image: linear-gradient(
       to left,
-      rgb(26 26 30),
-      rgb(39 39 45),
-      rgb(39 39 45),
-      rgb(39 39 45),
-      rgb(26 26 30)
+      rgba(13, 10, 20, 0.8),
+      rgba(37, 34, 53, 0.9),
+      rgba(37, 34, 53, 0.9),
+      rgba(37, 34, 53, 0.9),
+      rgba(13, 10, 20, 0.8)
     );
   }
-
-  /* stylelint-disable-next-line selector-id-pattern */
-  #disqus_thread {
-    color-scheme: none;
+  
+  /* Focus states with purple glow for accessibility */
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus,
+  a:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--purple-glow);
   }
-
-  /* --- Syntax highlight theme from `rougify style base16.dark` --- */
-
-  .highlight .gp {
-    color: #87939d;
-  }
-
-  .highlight table td {
-    padding: 5px;
-  }
-
-  .highlight table pre {
-    margin: 0;
-  }
-
-  .highlight,
-  .highlight .w {
-    color: #d0d0d0;
-    background-color: #151515;
-  }
-
-  .highlight .err {
-    color: #151515;
-    background-color: #ac4142;
-  }
-
-  .highlight .c,
-  .highlight .ch,
-  .highlight .cd,
-  .highlight .cm,
-  .highlight .cpf,
-  .highlight .c1,
-  .highlight .cs {
-    color: #848484;
-  }
-
-  .highlight .cp {
-    color: #f4bf75;
-  }
-
-  .highlight .nt {
-    color: #f4bf75;
-  }
-
-  .highlight .o,
-  .highlight .ow {
-    color: #d0d0d0;
-  }
-
-  .highlight .p,
-  .highlight .pi {
-    color: #d0d0d0;
-  }
-
-  .highlight .gi {
-    color: #90a959;
-  }
-
-  .highlight .gd {
-    color: #f08a8b;
-    background-color: #320000;
-  }
-
-  .highlight .gh {
-    color: #6a9fb5;
-    background-color: #151515;
-    font-weight: bold;
-  }
-
-  .highlight .k,
-  .highlight .kn,
-  .highlight .kp,
-  .highlight .kr,
-  .highlight .kv {
-    color: #aa759f;
-  }
-
-  .highlight .kc {
-    color: #d28445;
-  }
-
-  .highlight .kt {
-    color: #d28445;
-  }
-
-  .highlight .kd {
-    color: #d28445;
-  }
-
-  .highlight .s,
-  .highlight .sb,
-  .highlight .sc,
-  .highlight .dl,
-  .highlight .sd,
-  .highlight .s2,
-  .highlight .sh,
-  .highlight .sx,
-  .highlight .s1 {
-    color: #90a959;
-  }
-
-  .highlight .sa {
-    color: #aa759f;
-  }
-
-  .highlight .sr {
-    color: #75b5aa;
-  }
-
-  .highlight .si {
-    color: #b76d45;
-  }
-
-  .highlight .se {
-    color: #b76d45;
-  }
-
-  .highlight .nn {
-    color: #f4bf75;
-  }
-
-  .highlight .nc {
-    color: #f4bf75;
-  }
-
-  .highlight .no {
-    color: #f4bf75;
-  }
-
-  .highlight .na {
-    color: #6a9fb5;
-  }
-
-  .highlight .m,
-  .highlight .mb,
-  .highlight .mf,
-  .highlight .mh,
-  .highlight .mi,
-  .highlight .il,
-  .highlight .mo,
-  .highlight .mx {
-    color: #90a959;
-  }
-
-  .highlight .ss {
-    color: #90a959;
+  
+  /* Enhanced card hover effects */
+  .card {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      box-shadow: var(--shadow-lg), var(--glow-subtle);
+      transform: translateY(-2px);
+      border-color: var(--purple-500);
+    }
   }
 }

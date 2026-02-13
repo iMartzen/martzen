@@ -1,309 +1,239 @@
-@mixin styles {
-  /* Framework color */
-  --main-bg: white;
-  --mask-bg: #c1c3c5;
-  --main-border-color: #f3f3f3;
+// Purple Dawn Theme - Light theme with purple accents design system
+// Created: February 2026 - Clean, fresh theme with purple brand identity
 
-  /* Common color */
-  --text-color: #34343c;
-  --text-muted-color: #757575;
-  --text-muted-highlight-color: inherit;
-  --heading-color: #2a2a2a;
-  --label-color: #585858;
-  --blockquote-border-color: #eeeeee;
-  --blockquote-text-color: #757575;
-  --link-color: #0056b2;
-  --link-underline-color: #dee2e6;
-  --button-bg: #ffffff;
-  --btn-border-color: #e9ecef;
-  --btn-backtotop-color: #686868;
-  --btn-backtotop-border-color: #f1f1f1;
-  --checkbox-color: #c5c5c5;
-  --checkbox-checked-color: #07a8f7;
-  --img-bg: radial-gradient(circle, rgb(255 255 255) 0%, rgb(239 239 239) 100%);
+@mixin styles {
+  /* == PURPLE DAWN DESIGN SYSTEM == */
+  
+  /* Core Purple Palette (shared with dark theme) */
+  --purple-50: #F4F1FF;
+  --purple-100: #E5DBFF;
+  --purple-300: #B794F6;
+  --purple-500: #7C5DFA;        // Primary brand color (consistent)
+  --purple-600: #6B46C1;       // Hover interactions
+  --purple-700: #5B2C87;       // Active states
+  --purple-glow: rgba(124, 93, 250, 0.25); // Lighter glow for light theme
+  
+  /* Framework color (warm, not clinical whites) */
+  --main-bg: #FDFCFF;          // Warm off-white with purple hint
+  --mask-bg: #E5DBFF;          // Purple tinted overlay
+  --main-border-color: var(--purple-100); // Soft purple borders
+
+  /* Background layers */
+  --bg-primary: #FDFCFF;
+  --bg-secondary: #F8F6FB;      // Elevated warm gray
+  --bg-tertiary: #F1EDF7;       // Card surfaces
+  --surface-elevated: #FFFFFF;  // Pure white for contrast
+  --surface-glass: rgba(255, 255, 255, 0.9);
+
+  /* Typography system */
+  --text-color: #2A1F3D;        // Deep purple-charcoal
+  --text-muted-color: #593E76;  // Purple-gray readable
+  --text-muted-highlight-color: #7C5DFA;
+  --heading-color: #1F1629;     // Almost black purple
+  --label-color: #593E76;
+  --blockquote-border-color: var(--purple-100);
+  --blockquote-text-color: #593E76;
+  --link-color: var(--purple-500);  // Consistent purple links
+  --link-underline-color: var(--purple-100);
+  
+  /* Interactive elements */
+  --button-bg: #FFFFFF;
+  --btn-border-color: var(--purple-100);
+  --btn-backtotop-color: #593E76;
+  --btn-backtotop-border-color: var(--purple-100);
+  --card-header-bg: var(--bg-secondary);
+  --checkbox-color: #B794F6;
+  --checkbox-checked-color: var(--purple-500);
+  
+  /* Soft gradients with purple hints */
+  --img-bg: radial-gradient(circle, #FDFCFF 0%, #F8F6FB 100%);
   --shimmer-bg: linear-gradient(
     90deg,
-    rgb(250 250 250 / 0%) 0%,
-    rgb(232 230 230 / 100%) 50%,
-    rgb(250 250 250 / 0%) 100%
+    rgba(124, 93, 250, 0%) 0%,
+    rgba(124, 93, 250, 0.1) 50%,
+    rgba(124, 93, 250, 0%) 100%
   );
 
-  /* Sidebar */
-  --site-title-color: rgb(113 113 113);
-  --site-subtitle-color: #717171;
-  --sidebar-bg: #f6f8fa;
-  --sidebar-border-color: #efefef;
-  --sidebar-muted-color: #545454;
-  --sidebar-active-color: #1d1d1d;
-  --sidebar-hover-bg: rgb(223 233 241 / 64%);
-  --sidebar-btn-bg: white;
-  --sidebar-btn-color: #8e8e8e;
-  --avatar-border-color: white;
+  /* Sidebar - Clean with purple accents */
+  --site-title-color: var(--purple-600);
+  --site-subtitle-color: #593E76;
+  --sidebar-bg: var(--bg-secondary);
+  --sidebar-border-color: var(--purple-100);
+  --sidebar-muted-color: #593E76;   // Main nav link color - purple-gray
+  --sidebar-active-color: var(--purple-700);
+  --sidebar-hover-bg: rgba(124, 93, 250, 0.04);
+  --sidebar-btn-bg: #FFFFFF;
+  --sidebar-btn-color: #593E76;
+  --avatar-border-color: var(--purple-300);
 
-  /* Topbar */
-  --topbar-bg: rgb(255 255 255 / 70%);
-  --topbar-text-color: rgb(78 78 78);
-  --search-border-color: rgb(240 240 240);
-  --search-icon-color: #c2c6cc;
-  --input-focus-border-color: #b8b8b8;
+  /* Topbar with subtle purple tint */
+  --topbar-bg: rgba(253, 252, 255, 0.9);
+  --topbar-text-color: #2A1F3D;
+  --search-border-color: var(--purple-100);
+  --search-icon-color: var(--purple-300);
+  --input-focus-border-color: var(--purple-500);
 
   /* Home page */
-  --post-list-text-color: dimgray;
-  --btn-patinator-text-color: #555555;
-  --btn-paginator-hover-color: var(--sidebar-bg);
+  --post-list-text-color: #593E76;
+  --btn-patinator-text-color: #2A1F3D;
+  --btn-paginator-hover-color: var(--bg-secondary);
 
-  /* Posts */
-  --toc-highlight: #0550ae;
-  --toc-popup-border-color: lightgray;
-  --btn-share-color: gray;
-  --btn-share-hover-color: #0d6efd;
-  --card-bg: white;
-  --card-hover-bg: #e2e2e2;
-  --card-shadow: rgb(104 104 104 / 5%) 0 2px 6px 0,
-    rgb(211 209 209 / 15%) 0 0 0 1px;
-  --footnote-target-bg: lightcyan;
-  --tb-odd-bg: #fbfcfd;
-  --tb-border-color: #eaeaea;
-  --dash-color: silver;
-  --kbd-wrap-color: #bdbdbd;
+  /* Posts with purple highlights */
+  --toc-highlight: var(--purple-600);
+  --toc-popup-border-color: var(--purple-100);
+  --btn-share-color: #593E76;
+  --btn-share-hover-color: var(--purple-500);
+  --card-bg: #FFFFFF;
+  --card-hover-bg: rgba(124, 93, 250, 0.02);
+  --footnote-target-bg: var(--purple-50);
+  --tb-odd-bg: #FDFCFF;
+  --tb-border-color: var(--purple-100);
+  --dash-color: var(--purple-300);
+  
+  /* Subtle card shadows with hint of purple */
+  --card-shadow: 
+    0 2px 8px rgba(124, 93, 250, 0.08),
+    0 0 0 1px rgba(229, 219, 255, 0.5);
+  
+  /* Keyboard styling */
+  --kbd-wrap-color: var(--purple-300);
   --kbd-text-color: var(--text-color);
-  --kbd-bg-color: white;
-  --prompt-text-color: rgb(46 46 46 / 77%);
-  --prompt-tip-bg: rgb(123 247 144 / 20%);
-  --prompt-tip-icon-color: #03b303;
-  --prompt-info-bg: #e1f5fe;
-  --prompt-info-icon-color: #0070cb;
-  --prompt-warning-bg: rgb(255 243 205);
-  --prompt-warning-icon-color: #ef9c03;
-  --prompt-danger-bg: rgb(248 215 218 / 56%);
-  --prompt-danger-icon-color: #df3c30;
+  --kbd-bg-color: #FFFFFF;
+  
+  /* Status colors (consistent semantic meaning with dark theme) */
+  --prompt-text-color: rgba(42, 31, 61, 0.8);
+  --prompt-tip-bg: rgba(5, 150, 105, 0.1);
+  --prompt-tip-icon-color: #059669;
+  --prompt-info-bg: rgba(124, 93, 250, 0.08);
+  --prompt-info-icon-color: var(--purple-500);
+  --prompt-warning-bg: rgba(217, 119, 6, 0.1);
+  --prompt-warning-icon-color: #D97706;
+  --prompt-danger-bg: rgba(220, 38, 38, 0.1);
+  --prompt-danger-icon-color: #DC2626;
 
-  /* Tags */
-  --tag-border: #dee2e6;
-  --tag-shadow: var(--btn-border-color);
-  --tag-hover: rgb(222 226 230);
-  --search-tag-bg: #f8f9fa;
+  /* Tags with purple theming */
+  --tag-border: var(--purple-100);
+  --tag-shadow: var(--purple-100);
+  --tag-hover: var(--purple-50);
+  --search-tag-bg: var(--purple-50);
 
   /* Categories */
-  --categories-border: rgb(0 0 0 / 12.5%);
-  --categories-hover-bg: var(--btn-border-color);
-  --categories-icon-hover-color: darkslategray;
+  --categories-border: rgba(124, 93, 250, 0.2);
+  --categories-hover-bg: var(--purple-50);
+  --categories-icon-hover-color: var(--purple-600);
 
-  /* Archive */
-  --timeline-color: rgb(0 0 0 / 7.5%);
-  --timeline-node-bg: #c2c6cc;
-  --timeline-year-dot-color: #ffffff;
+  /* Archive timeline with purple accents */
+  --timeline-color: var(--purple-100);
+  --timeline-node-bg: var(--purple-500);
+  --timeline-year-dot-color: #FFFFFF;
 
-  /* --- Custom code light mode colors --- */
-  --language-border-color: #ececec;
-  --highlight-bg-color: #f6f8fa;
-  --highlighter-rouge-color: #3f596f;
-  --highlight-lineno-color: #9e9e9e;
-  --inline-code-bg: rgb(25 25 28 / 5%);
-  --code-color: #3a3a3a;
-  --code-header-text-color: #a3a3a3;
-  --code-header-muted-color: #e5e5e5;
-  --code-header-icon-color: #c9c8c8;
-  --clipboard-checked-color: #43c743;
+  /* Code highlighting with purple theme */
+  --language-border-color: var(--purple-100);
+  --highlight-bg-color: var(--purple-50);
+  --highlighter-rouge-color: var(--purple-600);
+  --highlight-lineno-color: var(--purple-300);
+  --inline-code-bg: rgba(124, 93, 250, 0.05);
+  --code-color: #2A1F3D;
+  --code-header-text-color: #593E76;
+  --code-header-muted-color: var(--purple-100);
+  --code-header-icon-color: var(--purple-500);
+  --clipboard-checked-color: #059669;
+  --filepath-text-color: var(--purple-600);
 
-  [class^='prompt-'] {
-    --link-underline-color: rgb(219 216 216);
-  }
+  /* == LIGHT THEME GLOW SYSTEM == */
+  /* Glow in light theme is primarily outline-based */
+  --glow-subtle: 0 0 0 1px rgba(124, 93, 250, 0.2);
+  --glow-medium: 0 0 0 2px rgba(124, 93, 250, 0.3);
+  --glow-strong: 0 0 0 3px rgba(124, 93, 250, 0.4);
+  
+  /* Interactive overlays */
+  --hover-overlay: rgba(124, 93, 250, 0.04);
+  --active-overlay: rgba(124, 93, 250, 0.12);
+  --selection: rgba(124, 93, 250, 0.15);
+  
+  /* Soft shadows with purple tint */
+  --shadow-sm: 0 2px 8px rgba(124, 93, 250, 0.08);
+  --shadow-lg: 0 8px 32px rgba(124, 93, 250, 0.12);
 
   .dark {
     display: none;
   }
 
-  /* --- Syntax highlight theme from `rougify style github` --- */
-
-  .highlight table td {
-    padding: 5px;
+  /* Enhanced component styles */
+  .categories.card,
+  .list-group-item {
+    background-color: var(--card-bg);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: var(--categories-hover-bg);
+      box-shadow: var(--glow-subtle);
+    }
   }
 
-  .highlight table pre {
-    margin: 0;
+  .categories {
+    .card-header {
+      background-color: var(--card-header-bg);
+    }
+
+    .list-group-item {
+      border-left: none;
+      border-right: none;
+      padding-left: 2rem;
+      border-color: var(--categories-border);
+
+      &:last-child {
+        border-bottom-color: var(--card-bg);
+      }
+      
+      &:hover {
+        border-left: 3px solid var(--purple-500);
+        padding-left: calc(2rem - 3px);
+        background: var(--categories-hover-bg);
+      }
+    }
   }
 
-  .highlight,
-  .highlight .w {
-    color: #24292f;
-    background-color: #f6f8fa;
+  /* Archive with subtle purple gradient */
+  #archives li:nth-child(odd) {
+    background-image: linear-gradient(
+      to left,
+      rgba(253, 252, 255, 0.5),
+      rgba(248, 246, 251, 0.8),
+      rgba(248, 246, 251, 0.8),
+      rgba(248, 246, 251, 0.8),
+      rgba(253, 252, 255, 0.5)
+    );
   }
-
-  .highlight .k,
-  .highlight .kd,
-  .highlight .kn,
-  .highlight .kp,
-  .highlight .kr,
-  .highlight .kt,
-  .highlight .kv {
-    color: #cf222e;
+  
+  /* Focus states with purple outline for accessibility */
+  button:focus,
+  input:focus, 
+  textarea:focus,
+  select:focus,
+  a:focus {
+    outline: 0;
+    box-shadow: var(--glow-medium);
   }
-
-  .highlight .gr {
-    color: #f6f8fa;
+  
+  /* Enhanced card effects */
+  .card {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--purple-300);
+    }
   }
-
-  .highlight .gd {
-    color: #82071e;
-    background-color: #ffebe9;
-  }
-
-  .highlight .nb {
-    color: #953800;
-  }
-
-  .highlight .nc {
-    color: #953800;
-  }
-
-  .highlight .no {
-    color: #953800;
-  }
-
-  .highlight .nn {
-    color: #953800;
-  }
-
-  .highlight .sr {
-    color: #116329;
-  }
-
-  .highlight .na {
-    color: #116329;
-  }
-
-  .highlight .nt {
-    color: #116329;
-  }
-
-  .highlight .gi {
-    color: #116329;
-    background-color: #dafbe1;
-  }
-
-  .highlight .kc {
-    color: #0550ae;
-  }
-
-  .highlight .l,
-  .highlight .ld,
-  .highlight .m,
-  .highlight .mb,
-  .highlight .mf,
-  .highlight .mh,
-  .highlight .mi,
-  .highlight .il,
-  .highlight .mo,
-  .highlight .mx {
-    color: #0550ae;
-  }
-
-  .highlight .sb {
-    color: #0550ae;
-  }
-
-  .highlight .bp {
-    color: #0550ae;
-  }
-
-  .highlight .ne {
-    color: #0550ae;
-  }
-
-  .highlight .nl {
-    color: #0550ae;
-  }
-
-  .highlight .py {
-    color: #0550ae;
-  }
-
-  .highlight .nv,
-  .highlight .vc,
-  .highlight .vg,
-  .highlight .vi,
-  .highlight .vm {
-    color: #0550ae;
-  }
-
-  .highlight .o,
-  .highlight .ow {
-    color: #0550ae;
-  }
-
-  .highlight .gh {
-    color: #0550ae;
-    font-weight: bold;
-  }
-
-  .highlight .gu {
-    color: #0550ae;
-    font-weight: bold;
-  }
-
-  .highlight .s,
-  .highlight .sa,
-  .highlight .sc,
-  .highlight .dl,
-  .highlight .sd,
-  .highlight .s2,
-  .highlight .se,
-  .highlight .sh,
-  .highlight .sx,
-  .highlight .s1,
-  .highlight .ss {
-    color: #0a3069;
-  }
-
-  .highlight .nd {
-    color: #8250df;
-  }
-
-  .highlight .nf,
-  .highlight .fm {
-    color: #8250df;
-  }
-
-  .highlight .err {
-    color: #f6f8fa;
-    background-color: #82071e;
-  }
-
-  .highlight .c,
-  .highlight .ch,
-  .highlight .cd,
-  .highlight .cm,
-  .highlight .cp,
-  .highlight .cpf,
-  .highlight .c1,
-  .highlight .cs {
-    color: #68717a;
-  }
-
-  .highlight .gl {
-    color: #68717a;
-  }
-
-  .highlight .gt {
-    color: #68717a;
-  }
-
-  .highlight .ni {
-    color: #24292f;
-  }
-
-  .highlight .si {
-    color: #24292f;
-  }
-
-  .highlight .ge {
-    color: #24292f;
-    font-style: italic;
-  }
-
-  .highlight .gs {
-    color: #24292f;
-    font-weight: bold;
+  
+  /* Enhanced post navigation with purple accents */
+  .post-navigation {
+    .nav-link {
+      &:hover {
+        color: var(--purple-600);
+        background: var(--hover-overlay);
+      }
+    }
   }
 }
